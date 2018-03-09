@@ -1,0 +1,48 @@
+{% set categories = [
+  { title: 'Anti Cancer Drugs',           count: '21',   label: 'new'  },
+  { title: 'Asthma',                      count: '16',   label: 'sale' },
+  { title: 'Cholesterol',                 count: '76',   label: ''     },
+  { title: 'Diabetes',                    count: '23',   label: ''     },
+  { title: 'Erectile Dysfunction (ED)',   count: '45',   label: 'hot'  },
+  { title: 'Eye Care / Eye Infections',   count: '26',   label: ''     },
+  { title: 'GERD ( Acid Reducers )',      count: '31',   label: 'new'  },
+  { title: 'Hair Loss',                   count: '17',   label: ''     },
+  { title: 'Hepatitis C',                 count: '36',   label: 'sale' },
+  { title: 'Herbal',                      count: '82',   label: ''     },
+  { title: 'Hypertension',                count: '37',   label: 'hot'  },
+  { title: 'Parkinsons',                  count: '34',   label: 'new'  },
+  { title: 'Weight Loss (Obesity)',       count: '17',   label: ''     }
+] %}
+{% set widget = [
+  { title: 'For Womans', img: 'w1' },
+  { title: 'For Mans',   img: 'w2' },
+  { title: 'For Family', img: 'w3' }
+] %}
+
+
+<div class="cat-list block block-bs">
+  <div class="cat-list-header">
+    <div class="cat-list-title">Categories</div>
+    <div class="cat-list-descr">more than 437 items</div>
+  </div>
+  <div class="cat-list-content">
+    <ul>
+      {% for c in categories %}
+      <li><a href="">{{ c.title }}</a>{% if c.count != '' %}<span id="count">{{ c.count }}</span>{% endif %}{% if c.label != '' %}<span id="label" class="{{ c.label }}">{{ c.label }}</span></li>{% endif %}
+      {% endfor %}
+      <li><a href="#"><b>View all</b></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="custom-widgets block-bs">
+  {% for w in widget %}
+  <div class="custom-widget">
+    <div class="cw-thumb"><img src="img/{{ w.img }}.png"></div>
+    <div class="cw-content">
+      <div class="cw-title"><a href="#">{{ w.title }}</a></div>
+      <div class="cw-descr">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusa- ntium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto.</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

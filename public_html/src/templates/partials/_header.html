@@ -1,0 +1,87 @@
+{% set menu = [
+  { title: 'Submenu One',    active: 'true'  },
+  { title: 'Submenu Two',    active: 'false' },
+  { title: 'Submenu Three',  active: 'false' },
+  { title: 'Submenu Four',   active: 'false' },
+  { title: 'Submenu Five',   active: 'false' },
+  { title: 'Submenu Six',    active: 'false' }
+] %}
+
+<div class="container">
+
+  <!-- BEGIN header-top -->
+  <div class="header-top">
+      <div class="row">
+        <div class="col-md-6 col-sm-4 col-12">
+          <div class="ht-left">
+            <span>Need help or advice?</span> <a href="mailto:info@medicalstore.ru">info@medicalstore.ru</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-8 col-12">
+          <div class="ht-right">
+            <div class="ht-right-item">
+              <b>Your Region</b>
+              <img src="img/flag-usa.png">
+              <select>
+                <option>United States of America</option>
+                <option>Canada</option>
+                <option>Mexico</option>
+              </select>
+            </div>
+            <div class="ht-right-item">
+              <b>Currency</b>
+              <select>
+                <option>USD</option>
+                <option>CAD</option>
+                <option>MXN</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- END header-top -->
+
+  <div class="block-bs">
+    <!-- BEGIN header-center -->
+    <div class="header-center">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-12">
+          <a href="/" class="logo">
+            <span class="logo-img">Logo</span>
+            <span class="logo-text">short slogan goes here</span>
+          </a>
+        </div>
+        <div class="col-lg-9 col-md-8 col-12">
+          <div class="hc-cnt">
+            <div class="hc-cnt-text">Best Medicines from More Than 50 Shops - find best price now! <a href="#">View&nbsp;BestSellers</a>
+            </div>
+            <div class="hc-cnt-search">
+              <form class="form-wrapper cf" action="">
+                <input type="search" name="s" placeholder="Search product" required>
+                <input type="submit" value="">
+              </form>
+            </div>
+            <div class="hc-cnt-text">Sample: <span class="accent-text">erectile dysfunction, hair lost, pills for mens health</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END header-center -->
+
+    <!-- BEGIN header-bottom -->
+    <div class="header-bottom">
+      <a href="#main-menu" id="toggle-header" class="toggle"><span></span></a>
+      <nav id="main-menu" class="main-menu">
+        <ul>
+          {% for m in menu %}
+          <li {% if m.active == 'true' %}class="active"{% endif %}><a href="#">{{ m.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="fb-wr"><img src="img/fb.png"></div>
+    </div>
+    <!-- END header-bottom -->
+  </div>
+
+</div>

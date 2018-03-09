@@ -1,0 +1,15 @@
+ProjectTitle: medicalstore
+
+PageList:
+- file: main.html
+  ready: 50
+- file: shop.html
+  ready: 50
+- file: shop-list.html
+  ready: 50
+- file: item.html
+  ready: 50
+- file: disease.html
+  ready: 50
+- file: text.html
+  ready: 50

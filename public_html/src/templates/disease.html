@@ -1,0 +1,123 @@
+---
+title: Disease
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<div class="block block-bs">
+
+  <div class="content clearfix">
+
+    <h1 class="cnt-title">ERECTILE DYSFUNCTION (ED)</h1>
+
+    <img src="img/cnt.png" style="float: left;margin-right: 24px">
+
+    <p><b>Sed ut perspiciatis,</b> unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui <a href="#">ratione voluptatem sequi</a> nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore</p>
+
+    <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam</p>
+
+  </div>
+
+  <div class="filters">
+    <div class="filter">
+      <select>
+        <option>Rating</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+    <div class="filter">
+      <select>
+        <option>Delivery time</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+    <div class="filter">
+      <select>
+        <option>Country</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+    <div class="filter">
+      <select>
+        <option>Payment</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="table-wr">
+    <table class="table shop-table">
+      <thead class="thead-accent">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">Proce</th>
+          <th scope="col">Shop</th>
+          <th scope="col">Delivery</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in range(0,5) %}
+        <!-- BEGIN store-table item -->
+        <tr>
+          <td scope="row" data-label="country">
+            <div class="st-flag"><img src="img/flag-usa.png"></div>
+          </td>
+          <td data-label="name">
+            <div class="st-name"><b>Viagra</b> (generic)</div>
+            <ul>
+              <li>25 mg</li>
+              <li>50 mg</li>
+              <li>100 mg</li>
+            </ul>
+          </td>
+          <td data-label="price">
+            <div class="st-name">&nbsp;</div>
+            <ul>
+              <li>$2.99/pill</li>
+              <li>$1.78/pill</li>
+              <li>$1.20/pill</li>
+            </ul>
+          </td>
+          <td data-label="shop">
+            <div class="st-thumb"><a href="#"><img src="img/shop.png"></a></div>
+            <!-- BEGIN kk-star-ratings -->
+            <div class="stars clearfix">
+              <img src="img/stars.png" style="margin-right: 5px;"><span>4.85/5</span>
+            </div>
+            <!-- END kk-star-ratings -->
+            <div class="st-info">
+              <span class="st-icon st-icon-1 st-icon-active"></span>
+              <span class="st-icon st-icon-2"></span>
+              <span class="st-icon st-icon-3"></span>
+              <span class="st-icon st-icon-4 st-icon-active"></span>
+              <span class="st-icon st-icon-5"></span>
+            </div>
+          </td>
+          <td data-label="delivery">
+            <div class="st-delivery">2-5 days<span class="st-icon-d"></span></div>
+          </td>
+          <td>
+            <a href="#" class="st-visit">Visit Store</a>
+          </td>
+        </tr>
+        <!-- END store-table item -->
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="offers-more">
+    <a href="#">Load more Offers</a>
+  </div>
+
+</div>
+
+{% endblock %}

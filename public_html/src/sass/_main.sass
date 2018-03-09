@@ -1,0 +1,982 @@
+/* HEADER */
+/********************************************************************************/
+.header
+  margin-bottom: 20px
+
+.header-top
+  padding: 16px 0
+  color: #212121
+  font-size: 14px
+.ht-left
+  +r(992)
+    display: flex
+    flex-direction: column
+  +r(576)
+    flex-direction: row
+    span
+      display: none
+  a
+    color: #212121
+    font-weight: 700
+    text-decoration: underline
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none
+.ht-right
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  +r(992)
+    flex-direction: column
+    align-items: flex-end
+  +r(576)
+    align-items: flex-start
+.ht-right-item
+  margin-right: 20px
+  +r(992)
+    margin-right: 0
+  select
+    color: #212121
+    background: transparent
+    border: 0
+    text-decoration: underline
+    cursor: pointer
+
+.header-center
+  padding: 2px 0
+  background-color: #3399ff
+  background-image: url(../img/bg-circle.png)
+  background-repeat: no-repeat
+  background-position: 100% 100%
+.logo
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  height: 100%
+  color: #fff
+  text-decoration: none
+  +r(768)
+    padding: 30px 0
+  &:hover,
+  &:focus,
+  &:active
+    color: #fff
+    text-decoration: none
+.hc-cnt
+  padding-right: 40px
+  +r(768)
+    padding-left: 40px
+  +r(576)
+    padding: 0 20px
+.hc-cnt-text
+  padding: 14px 0
+  color: #fff
+  font-size: 15px
+  font-weight: 400
+  a
+    color: #fff
+    text-decoration: underline
+    margin-left: 5px
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none
+  .accent-text
+    padding: 2px 5px
+    margin-left: 5px
+    background-color: #0e62b6
+.hc-cnt-search
+  position: relative
+  height: 35px
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+  input[type="search"]
+    height: 35px
+    width: 100%
+    padding: 0 45px 0 10px
+  input[type="submit"]
+    position: absolute
+    top: 0
+    right: 0
+    width: 35px
+    height: 35px
+    background: url(../img/search.png) no-repeat 50% 50%, linear-gradient(to top, #39f 0%, #7fbefe 100%)
+    border-top: 1px solid #afd7ff
+
+.header-bottom
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: #fff
+  padding-left: 20px
+
+.main-menu
+  padding: 8px 0
+  +r(992)
+    padding: 20px 0
+    position: absolute
+    width: 100%
+    top: 42px
+    left: 0
+    text-align: left
+    background-color: #fff
+    opacity: 0
+    visibility: hidden
+    transition: opacity .4s
+    z-index: -1
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15)
+  ul
+    display: flex
+    justify-content: flex-start
+    +r(992)
+      flex-direction: column
+      padding-left: 20px
+    li
+      a
+        display: inline-block
+        padding-left: 17px
+        margin-right: 8px
+        color: #464646
+        font-size: 15px
+        line-height: 25px
+        text-transform: uppercase
+        position: relative
+        &::before,
+        &::after
+          position: absolute
+          content: ''
+          width: 4px
+          height: 7px
+          top: 50%
+          transform: translateY(-50%)
+        &::before
+          left: 0
+          +arr(4,7, #c3d8ed, br)
+        &::after
+          left: 4px
+          +arr(4,7, #c3d8ed, tl)
+        &:hover,
+        &:focus,
+        &:active
+          color: #464646
+          text-decoration: none
+          &::before
+            +arr(4,7, #86b0da, br)
+          &::after
+            +arr(4,7, #86b0da, tl)
+.toggle
+  display: none
+  width: 35px
+  height: 21px
+  padding: 9px 0
+  z-index: 102
+  position: relative
+  float: right
+  +r(992)
+    display: block
+  span
+    position: relative
+    display: block
+    width: 100%
+    height: 3px
+    background-color: #39f
+    transition: all 0.3s
+    backface-visibility: hidden
+    border-radius: 2px
+    &:after,
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: #39f
+      transition: all 0.3s
+      backface-visibility: hidden
+      border-radius: 2px
+    &:after
+      top: 9px
+    &:before
+      top: -9px
+  &.on
+    span
+      background-color: transparent
+      &:before
+        transform: rotate(45deg) translate(6px, 6px)
+      &:after
+        transform: rotate(-45deg) translate(6px, -7px)
+    + .main-menu
+      opacity: 1
+      visibility: visible
+      transition: opacity .4s
+      z-index: 101
+
+.fb-wr
+  padding: 8px
+  border-left: 1px solid rgba(#b1b1b1, .3)
+
+/* MAIN */
+/********************************************************************************/
+.banner
+  img
+    max-width: 100%
+
+.content
+  padding: 18px 18px 0
+  border-bottom: 1px solid #e5e5e5
+
+.products
+  display: flex
+  flex-wrap: wrap
+.product-item
+  display: flex
+  flex-direction: column
+  border-right: 1px solid #e5e5e5
+  border-bottom: 1px solid #e5e5e5
+  +r(575)
+    border-right: 0
+  &:nth-child(3n)
+    border-right: 0
+    +r(1200)
+      border-right: 1px solid #e5e5e5
+    +r(575)
+      border-right: 0
+  &:nth-child(2n)
+    +r(1200)
+      border-right: 0
+.pi-top
+  padding: 25px 20px
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 156px
+.pi-img
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+.pi-bottom
+  padding: 0 30px 40px
+  +r(768)
+    padding: 0 20px 40px
+.pi-title,
+.pi-link
+  a
+    color: #39f
+    text-decoration: underline
+    &:hover,
+    &:focus,
+    &:active
+      color: #39f
+      text-decoration: none
+.pi-title
+  a
+    font-size: 18px
+.pi-link
+  a
+    font-size: 16px
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      width: 16px
+      height: 16px
+      background-image: url(../img/cart.png)
+      top: 50%
+      transform: translateY(-50%)
+      right: -20px
+
+.block-item-title
+  margin-bottom: 15px
+  a
+    color: #39f
+    font-size: 18px
+    text-decoration: underline
+    &:hover,
+    &:focus,
+    &:active
+      color: #39f
+      text-decoration: none
+
+.ci-title
+  margin-bottom: 10px
+  a
+    color: #2d2d2d
+    font-size: 16px
+    text-decoration: underline
+    &:hover,
+    &:focus,
+    &:active
+      color: #2d2d2d
+      text-decoration: none
+.category-bottom
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  margin-bottom: 20px
+.ci-img
+  display: block
+  width: 66px
+  height: 66px
+  border-radius: 50%
+  overflow: hidden
+  flex-shrink: 0
+  margin-right: 10px
+  img
+    max-width: 100%
+.ci-descr
+  color: #1b1b1b
+  font-size: 12px
+  line-height: 15px
+
+.shops-carousel
+  padding: 0 30px
+  position: relative
+  img
+    filter: grayscale(100%)
+    opacity: .4
+
+.subscribe
+  padding: 13px 18px 17px
+  background-color: #3399ff
+  background-image: url(../img/bg-circle-2.png)
+  background-repeat: no-repeat
+  background-position: 100% 100%
+  +r(992)
+    margin-bottom: 20px
+.subscribe-title
+  color: #fff
+  margin-bottom: 10px
+.subscribe-form
+  form
+    display: flex
+    +r(400)
+      flex-direction: column
+  input[type="email"]
+    padding: 0 10px
+    height: 35px
+    border: 1px solid #6f800b
+    color: #252525
+    font-size: 14px
+    line-height: 35px
+    flex-grow: 1
+    +r(400)
+      margin-bottom: 20px
+  input[type="submit"]
+    background-color: transparent
+    color: #fff
+    font-weight: 700
+    text-decoration: underline
+    margin-left: 18px
+    +r(400)
+      margin-left: 0
+    &:hover,
+    &:focus,
+    &:active
+      text-decoration: none
+
+/* SIDEBAR */
+/********************************************************************************/
+.cat-list-header
+  padding: 5px 18px
+  background-color: #3399ff
+.cat-list-title
+  color: #fff
+  font-size: 23px
+.cat-list-descr
+  color: #fff
+  font-size: 14px
+.cat-list-content
+  background-color: #fff
+  ul
+    li
+      padding: 7px 18px
+      border-bottom: 1px solid rgba(#000, .05)
+      text-transform: capitalize
+      a
+        display: inline-block
+        color: #151515
+        font-size: 16px
+        text-decoration: none
+        margin-right: 5px
+        &:hover,
+        &:focus,
+        &:active
+          color: #151515
+          text-decoration: underline
+#count,
+#label
+  padding: 0 4px
+  color: #fff
+#count
+  margin-right: 5px
+  background-color: rgba(#000, .2)
+#label
+  &.new
+    background-color: #9cb407
+  &.sale
+    background-color: #c10e0e
+  &.hot
+    background-color: #9cb407
+
+.custom-widgets
+  +r(991)
+    display: flex
+  +r(576)
+    flex-direction: column
+.custom-widget
+  +r(992)
+    border-right: 1px solid #e5e5e5
+    &:last-child
+      border: 0
+  +r(576)
+    border-right: 0
+.cw-thumb
+  img
+    width: 100%
+.cw-content
+  padding: 18px
+.cw-title
+  margin-bottom: 5px
+  a
+    color: #39f
+    font-size: 18px
+    text-decoration: underline
+    &:hover,
+    &:focus,
+    &:active
+      color: #39f
+      text-decoration: none
+
+/* FOOTER */
+/********************************************************************************/
+.footer-top
+  padding: 16px 0 16px 30px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  +r(576)
+    flex-direction: column
+    align-items: flex-start
+  .fb-wr
+    margin-right: 40px
+    padding: 0
+    border-left: 0
+    flex-shrink: 0
+    +r(576)
+      margin-bottom: 15px
+      margin-right: 0
+
+.footer-menu
+  ul
+    display: flex
+    justify-content: flex-start
+    +r(1200)
+      flex-wrap: wrap
+    li
+      +r(1200)
+        width: 25%
+      +r(768)
+        width: 50%
+      +r(576)
+        width: 100%
+      a
+        display: inline-block
+        margin-right: 23px
+        color: #2f2f2f
+        font-size: 14px
+        line-height: 25px
+        text-decoration: underline
+        &:hover,
+        &:focus,
+        &:active
+          color: #464646
+          text-decoration: none
+
+.footer-center-wr
+  position: relative
+  &::before
+    position: absolute
+    content: ''
+    width: 100%
+    height: 100%
+    border-top: 1px solid #e5e5e5
+    border-bottom: 1px solid #e5e5e5
+.footer-center
+  position: relative
+  padding: 25px 30px
+  color: #fff
+  background-color: #202020
+.footer-title
+  font-size: 20px
+  margin-bottom: 5px
+.footer-descr
+  font-size: 12px
+  line-height: 16px
+  +r(992)
+    margin-bottom: 20px
+
+.hot-menu
+  ul
+    display: flex
+    flex-wrap: wrap
+    li
+      width: 30%
+      margin-right: 5%
+      padding: 0 10px
+      position: relative
+      +rminmax(992, 1200)
+        padding: 0 0 0 10px
+      +r(576)
+        width: 50%
+        margin-right: 0
+      +r(400)
+        width: 100%
+      &::before,
+      &::after
+        position: absolute
+        content: ''
+        width: 5px
+        height: 1px
+        background-color: #a6a6a6
+        opacity: .5
+        left: 0
+      &::before
+        top: 10px
+        transform: rotate(45deg)
+      &::after
+        top: 13px
+        transform: rotate(-45deg)
+      &:nth-child(3n)
+        margin-right: 0
+      a
+        color: #fff
+        font-size: 12px
+        text-decoration: underline
+        opacity: .5
+        &:hover,
+        &:focus,
+        &:active
+          text-decoration: none
+
+.footer-bottom
+  padding: 20px 30px 25px
+  color: #1e1e1e
+  font-size: 13px
+  border-left: 1px solid #e5e5e5
+  border-right: 1px solid #e5e5e5
+.footer-bottom-title
+  font-weight: 700
+
+/* SHOP-LIST */
+/********************************************************************************/
+.filters
+  padding: 20px
+  display: flex
+  +r(768)
+    flex-wrap: wrap
+  .filter
+    margin-right: 20px
+    width: 25%
+    +r(768)
+      width: calc(50% - 10px)
+      margin-bottom: 20px
+      &:nth-child(1n)
+        margin-right: 10px
+      &:nth-child(2n)
+        margin-right: 0
+        margin-left: 10px
+    +r(500)
+      width: 100%
+      &:nth-child(1n)
+        margin-right: 0
+      &:nth-child(2n)
+        margin-left: 0
+    &:last-child
+      margin-right: 0
+    select
+      border: none
+      width: 100%
+      height: 27px
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+
+.shop-table,
+.shop-list-table
+  margin-bottom: 0
+  border-bottom: 1px solid #e5e5e5
+  *
+    vertical-align: middle!important
+    color: #1b1b1b
+    font-size: 15px
+    font-weight: 400
+  b
+    font-weight: 700
+  ul
+    li
+      &:last-child
+        font-weight: 700
+  thead
+    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e6 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e6',GradientType=0 )
+    th
+      padding: 12px 20px
+      border-right: 1px solid #e5e5e5
+      &:first-child
+        width: 56px
+      &:last-child
+        border-right: 0
+  tbody
+    text-align: center
+    td
+      padding: 12px 20px
+      border-right: 1px solid #e5e5e5
+      &:first-child
+        width: 56px
+      &:last-child
+        border-right: 0
+.shop-table
+  +rminmax(992, 1200)
+    border: 0
+    border-collapse: collapse
+    width: 100%
+    table-layout: fixed
+    thead
+      border: none
+      clip: rect(0 0 0 0)
+      height: 1px
+      margin: -1px
+      overflow: hidden
+      padding: 0
+      position: absolute
+      width: 1px
+    tbody
+      tr
+        border-top: 20px solid
+        border-image: linear-gradient(to bottom,#e7e7e6 0%, #fff 3%) 20 round round
+        display: block
+        &:last-child
+          td
+            &:last-child
+              border-bottom: 1px solid #dee2e6
+        td
+          display: block
+          text-align: right
+          border-right: 0
+          &:before
+            content: attr(data-label)
+            float: left
+            font-weight: bold
+            text-transform: uppercase
+        td[data-label="country"]
+          border-top: 0
+          width: 100%
+        td[data-label="price"]
+          .st-name
+            display: none
+  +r(768)
+    border: 0
+    border-collapse: collapse
+    width: 100%
+    table-layout: fixed
+    thead
+      border: none
+      clip: rect(0 0 0 0)
+      height: 1px
+      margin: -1px
+      overflow: hidden
+      padding: 0
+      position: absolute
+      width: 1px
+    tbody
+      tr
+        border-top: 20px solid
+        border-image: linear-gradient(to bottom,#e7e7e6 0%, #fff 3%) 20 round round
+        display: block
+        &:last-child
+          td
+            &:last-child
+              border-bottom: 1px solid #dee2e6
+        td
+          display: block
+          text-align: right
+          border-right: 0
+          &:before
+            content: attr(data-label)
+            float: left
+            font-weight: bold
+            text-transform: uppercase
+        td[data-label="country"]
+          border-top: 0
+          width: 100%
+        td[data-label="price"]
+          .st-name
+            display: none
+.shop-list-table
+  +r(1200)
+    border: 0
+    border-collapse: collapse
+    width: 100%
+    table-layout: fixed
+    thead
+      border: none
+      clip: rect(0 0 0 0)
+      height: 1px
+      margin: -1px
+      overflow: hidden
+      padding: 0
+      position: absolute
+      width: 1px
+    tbody
+      tr
+        border-top: 20px solid
+        border-image: linear-gradient(to bottom,#e7e7e6 0%, #fff 3%) 20 round round
+        display: block
+        &:last-child
+          td
+            &:last-child
+              border-bottom: 1px solid #dee2e6
+        td
+          display: block
+          text-align: right
+          border-right: 0
+          &:before
+            content: attr(data-label)
+            float: left
+            font-weight: bold
+            text-transform: uppercase
+        td[data-label="country"]
+          border-top: 0
+          width: 100%
+        td[data-label="price"]
+          .st-name
+            display: none
+
+.single-shop-table
+  thead
+    th
+      &:first-child
+        padding: 0
+        +rminmax(992, 1200)
+          padding: 12px 20px
+        +r(768)
+          padding: 12px 20px
+  tbody
+    td
+      &:first-child
+        padding: 0
+        +rminmax(992, 1200)
+          padding: 12px 20px
+        +r(768)
+          padding: 12px 20px
+
+  .st-flag-td
+    position: relative
+  .st-flag
+    padding: 0 20px
+    &.st-best
+      padding: 0 10px 0 30px
+      .st-best-cnt
+        text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.2)
+        color: #fff
+        font-size: 10px
+        line-height: 18px
+        white-space: nowrap
+        position: absolute
+        height: 100%
+        left: 0
+        top: 0
+        width: 18px
+        writing-mode: tb-rl
+        transform: rotate(-180deg)
+        +rminmax(992, 1200)
+          padding: 0 10px
+          writing-mode: horizontal-tb
+          transform: rotate(0) translateY(-50%)
+          width: auto
+          top: 50%
+          left: 100px
+          line-height: 22px
+          height: 22px
+        +r(768)
+          padding: 0 10px
+          writing-mode: horizontal-tb
+          transform: rotate(0) translateY(-50%)
+          width: auto
+          top: 50%
+          left: 100px
+          line-height: 22px
+          height: 22px
+      .st-best-cnt-1
+        background-color: #f80
+      .st-best-cnt-2
+        background-color: #9cb407
+
+.st-icon
+  margin-right: 5px
+  display: inline-block
+  width: 18px
+  height: 18px
+  background-image: url(../img/st-info-sprite.png)
+  background-repeat: no-repeat
+  background-position-y: 0
+  &.st-icon-active
+    background-position-y: -20px
+  &:last-child
+    margin-right: 0
+.st-icon-1
+  background-position-x: 0
+.st-icon-2
+  background-position-x: -20px
+.st-icon-3
+  background-position-x: -40px
+.st-icon-4
+  background-position-x: -60px
+.st-icon-5
+  width: 12px
+  background-position-x: -83px
+
+.st-icon-d
+  margin-right: 5px
+  display: inline-block
+  width: 18px
+  height: 16px
+  background-image: url(../img/std.png)
+  background-repeat: no-repeat
+  background-position: -19px 0
+  &.st-icon-active
+    background-position: 0 0
+
+.shop-table
+  .st-icon-d
+    display: block
+    margin: 0 auto
+    +rminmax(992, 1200)
+      display: inline-block
+      margin: 0
+      margin-left: 5px
+    +r(768)
+      display: inline-block
+      margin: 0
+      margin-left: 5px
+.shop-list-table
+  .st-icon-d
+    display: inline-block
+    margin-right: 15px
+
+.st-visit
+  padding: 5px 10px
+  color: #fff
+  background-color: #9cb407
+  text-decoration: underline
+  &:hover,
+  &:focus,
+  &:active
+    color: #fff
+    text-decoration: none
+
+.offers-more
+  padding: 30px 0
+  font-size: 18px
+  text-align: center
+
+.info-more
+  margin: 25px 0
+  text-align: center
+
+
+/* SHOP */
+/********************************************************************************/
+.shop-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 22px
+  .cnt-title
+    margin-bottom: 0
+.shop-thumb
+  margin-bottom: 20px
+  padding: 5px
+  border: 1px solid #f2f2f2
+  margin-bottom: 0
+.shop-features
+  margin-bottom: 20px
+  *
+    vertical-align: middle
+.shop-features-title,
+.shop-features-descr
+  display: inline-block
+  color: #000
+  font-size: 14px
+.shop-features-title
+  width: 40%
+  +r(576)
+    width: 100%
+    font-weight: 700
+.shop-features-descr
+  width: 60%
+  +r(576)
+    width: 100%
+    margin-bottom: 5px
+  img
+    margin-right: 5px
+.st-accent
+  color: #9cb407
+  font-weight: 700
+
+
+
+/* ITEM */
+/********************************************************************************/
+
+
+
+/* DISEASE */
+/********************************************************************************/
+
+
+
+/* TEXT */
+/********************************************************************************/
+
+
+
+/*  */
+/********************************************************************************/
+.shop-button-prev,
+.shop-button-next
+  position: absolute
+  width: 12px
+  height: 18px
+  top: 50%
+  transform: translateY(-50%)
+  background-image: url(../img/slider-sprite.png)
+  background-repeat: no-repeat
+.shop-button-prev
+  left: 0
+  background-position: 0 0
+  &:hover
+    background-position: 0 -18px
+.shop-button-next
+  right: 0
+  background-position: -12px 0
+  &:hover
+    background-position: -12px -18px
+
+/*  */
+/********************************************************************************/
+
+
+/*  */
+/********************************************************************************/
+
+
+/*  */
+/********************************************************************************/
+
+
+/*  */
+/*******************************************************************************
